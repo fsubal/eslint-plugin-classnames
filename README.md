@@ -31,7 +31,7 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
   "rules": {
-    "classnames/rule-name": 2
+    "classnames/prefer-classnames-function": 2
   }
 }
 ```
