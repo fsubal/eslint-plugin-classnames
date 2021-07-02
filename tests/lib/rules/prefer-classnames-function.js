@@ -34,7 +34,6 @@ ruleTester.run("prefer-classnames-function", rule, {
       options: [
         {
           maxSpaceSeparetedClasses: 1,
-          functionName: "className",
         },
       ],
     },
@@ -49,7 +48,14 @@ ruleTester.run("prefer-classnames-function", rule, {
       options: [
         {
           maxSpaceSeparetedClasses: 1,
-          functionName: "className",
+        },
+      ],
+    },
+    {
+      code: '<button className={clsx("bg-blue-300", "block")}>Hello</button>;',
+      options: [
+        {
+          maxSpaceSeparetedClasses: 1,
         },
       ],
     },
@@ -80,6 +86,50 @@ ruleTester.run("prefer-classnames-function", rule, {
               desc: "Call className() instead",
               output:
                 '<button className={className("bg-blue-300", "block")}>Hello</button>;',
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      code: '<button className="bg-blue-300 block">Hello</button>;',
+      options: [
+        {
+          maxSpaceSeparetedClasses: 1,
+          functionName: "clsx",
+        },
+      ],
+      errors: [
+        {
+          message: "The className has more than 1 classes. Use clsx() instead.",
+          suggestions: [
+            {
+              desc: "Call clsx() instead",
+              output:
+                '<button className={clsx("bg-blue-300", "block")}>Hello</button>;',
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      code: '<button className="bg-blue-300 block relative">Hello</button>;',
+      options: [
+        {
+          maxSpaceSeparetedClasses: 2,
+        },
+      ],
+      errors: [
+        {
+          message:
+            "The className has more than 2 classes. Use classNames() instead.",
+          suggestions: [
+            {
+              desc: "Call classNames() instead",
+              output:
+                '<button className={classNames("bg-blue-300", "block", "relative")}>Hello</button>;',
             },
           ],
         },
