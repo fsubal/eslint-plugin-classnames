@@ -12,12 +12,14 @@
   "scripts": {
     "test": "mocha tests --recursive"
   },
-  "dependencies": {
-    "requireindex": "~1.1.0"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@types/eslint": "^7.2.13",
+    "@types/estree": "^0.0.49",
+    "@types/estree-jsx": "^0.0.1",
     "eslint": "^7.1.0",
-    "mocha": "^7.2.0"
+    "mocha": "^7.2.0",
+    "typescript": "^4.3.5"
   },
   "engines": {
     "node": ">=0.10.0"
