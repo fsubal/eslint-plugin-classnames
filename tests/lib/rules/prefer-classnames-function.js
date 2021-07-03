@@ -83,7 +83,7 @@ ruleTester.run("prefer-classnames-function", rule, {
             "The className has more than 1 classes. Use className() instead.",
           suggestions: [
             {
-              desc: "Call className() instead",
+              desc: 'Convert to className("...", "...", ...) properly',
               output:
                 '<button className={className("bg-blue-300", "block")}>Hello</button>;',
             },
@@ -105,7 +105,7 @@ ruleTester.run("prefer-classnames-function", rule, {
           message: "The className has more than 1 classes. Use clsx() instead.",
           suggestions: [
             {
-              desc: "Call clsx() instead",
+              desc: 'Convert to clsx("...", "...", ...) properly',
               output:
                 '<button className={clsx("bg-blue-300", "block")}>Hello</button>;',
             },
@@ -127,9 +127,47 @@ ruleTester.run("prefer-classnames-function", rule, {
             "The className has more than 2 classes. Use classNames() instead.",
           suggestions: [
             {
-              desc: "Call classNames() instead",
+              desc: 'Convert to classNames("...", "...", ...) properly',
               output:
                 '<button className={classNames("bg-blue-300", "block", "relative")}>Hello</button>;',
+            },
+          ],
+        },
+      ],
+    },
+
+    // using template literal
+    {
+      code: "<button className={`bg-blue-300 block`}>Hello</button>;",
+      options: [],
+      errors: [
+        {
+          message:
+            "The className has more than 1 classes. Use classNames() instead.",
+          suggestions: [
+            {
+              desc: 'Convert to classNames("...", "...", ...) properly',
+              output:
+                '<button className={classNames("bg-blue-300", "block")}>Hello</button>;',
+            },
+          ],
+        },
+      ],
+    },
+
+    // string separated inside function
+    {
+      code: '<button className={classNames("bg-blue-300 block")}>Hello</button>;',
+      options: [],
+      errors: [
+        {
+          message:
+            "An argument of classNames() has more than 1 classes. Should be written one by one.",
+          suggestions: [
+            {
+              desc: 'Convert to classNames("...", "...", ...) properly',
+              output:
+                '<button className={classNames("bg-blue-300", "block")}>Hello</button>;',
             },
           ],
         },
