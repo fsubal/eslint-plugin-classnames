@@ -55,6 +55,19 @@ Examples of **correct** code for this rule:
   Hello
 </button>;
 
+// We do not split class if it's in a key of an object
+<button
+  className={classNames(
+    {
+      "bg-blue-300 block": true,
+    },
+    "relative",
+    ["text-white", "hover:text-grey-100"]
+  )}
+>
+  Hello
+</button>;
+
 <button className={classNames("bg-blue-300", "block", style.someClass)}>
   Hello
 </button>;

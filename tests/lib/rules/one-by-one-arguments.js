@@ -43,6 +43,23 @@ ruleTester.run("one-by-one-arguments", rule, {
 `,
       options: [],
     },
+
+    {
+      code: `
+<button
+  className={classNames(
+    {
+      "bg-blue-300 block": true,
+    },
+    "relative",
+    ["text-white", "hover:text-grey-100"]
+  )}
+>
+  Hello
+</button>;
+`,
+      options: [],
+    },
   ],
 
   invalid: [
