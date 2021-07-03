@@ -38,4 +38,10 @@ Then configure the rules you want to use under the rules section.
 
 ## Supported Rules
 
-- Fill in provided rules here
+✔: Enabled in the [`recommended`](#recommended) configuration.\
+🔧: Fixable with [`eslint --fix`](https://eslint.org/docs/user-guide/command-line-interface#fixing-problems).
+
+|  ✔  | 🔧  | Rule                                                                              | Description                                                                     |
+| :-: | :-: | :-------------------------------------------------------------------------------- | :------------------------------------------------------------------------------ |
+|  ✔  | 🔧  | [classnames/prefer-classnames-function](docs/rules/prefer-classnames-function.md) | suggest using className() or clsx() in JSX className                            |
+|  ✔  | 🔧  | [classnames/one-by-one-arguments](docs/rules/one-by-one-arguments.md)             | suggest not to include multiple classes in an argument of className() or clsx() |
