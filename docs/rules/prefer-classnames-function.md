@@ -8,12 +8,9 @@ Examples of **incorrect** code for this rule:
 
 ```jsx
 <button className="bg-blue-300 block">Hello</button>;
-
-// TODO
 <button className={`bg-blue-300 block`}>Hello</button>;
-
-// TODO
 <button className={classNames("bg-blue-300 block")}>Hello</button>;
+<button className={classNames("bg-blue-300")}>Hello</button>;
 ```
 
 Examples of **correct** code for this rule:

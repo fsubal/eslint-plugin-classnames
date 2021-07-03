@@ -124,6 +124,46 @@ ruleTester.run("prefer-classnames-function", rule, {
       ],
     },
 
+    // avoid className
+    {
+      code: '<button className={classNames("bg-blue-300")}>Hello</button>;',
+      options: [],
+      errors: [
+        {
+          message:
+            "Do not use classNames() when you have no greater than 1 classes.",
+          suggestions: [
+            {
+              desc: 'Just use className="..."',
+              output: '<button className="bg-blue-300">Hello</button>;',
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      code: '<button className={clsx("bg-blue-300", "text-white")}>Hello</button>;',
+      options: [
+        {
+          maxSpaceSeparetedClasses: 2,
+        },
+      ],
+      errors: [
+        {
+          message:
+            "Do not use classNames() when you have no greater than 2 classes.",
+          suggestions: [
+            {
+              desc: 'Just use className="..."',
+              output:
+                '<button className="bg-blue-300 text-white">Hello</button>;',
+            },
+          ],
+        },
+      ],
+    },
+
     // using template literal
     {
       code: "<button className={`bg-blue-300 block`}>Hello</button>;",
@@ -132,25 +172,6 @@ ruleTester.run("prefer-classnames-function", rule, {
         {
           message:
             "The className has more than 1 classes. Use classNames() instead.",
-          suggestions: [
-            {
-              desc: 'Convert to classNames("...", "...", ...) properly',
-              output:
-                '<button className={classNames("bg-blue-300", "block")}>Hello</button>;',
-            },
-          ],
-        },
-      ],
-    },
-
-    // string separated inside function
-    {
-      code: '<button className={classNames("bg-blue-300 block")}>Hello</button>;',
-      options: [],
-      errors: [
-        {
-          message:
-            "An argument of classNames() has more than 1 classes. Should be written one by one.",
           suggestions: [
             {
               desc: 'Convert to classNames("...", "...", ...) properly',
