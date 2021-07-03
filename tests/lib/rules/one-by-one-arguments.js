@@ -153,5 +153,44 @@ ruleTester.run("one-by-one-arguments", rule, {
         },
       ],
     },
+
+    {
+      code: `
+<button
+  className={clsx(
+    "bg-blue-300 block",
+    "relative",
+    foo ? "text-white hover:text-grey-100" : "text-black hover:text-grey-900"
+  )}
+>
+  Hello
+</button>;`,
+      options: [
+        {
+          functionName: "clsx",
+        },
+      ],
+      errors: [
+        {
+          message:
+            "An argument of clsx() has mulitple classes. Should be written one by one.",
+          suggestions: [
+            {
+              desc: 'Convert to clsx("...", "...", ...) properly',
+              output: `
+<button
+  className={clsx(
+    "bg-blue-300", "block",
+    "relative",
+    foo ? ["text-white", "hover:text-grey-100"] : ["text-black", "hover:text-grey-900"]
+  )}
+>
+  Hello
+</button>;`,
+            },
+          ],
+        },
+      ],
+    },
   ],
 });
