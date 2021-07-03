@@ -26,7 +26,7 @@ ruleTester.run("one-by-one-arguments", rule, {
     },
     {
       code: `<button
-      className={classNames(["bg-blue-300", "block"], "relative", [
+      className={classNames(["bg-blue-300", "block"], "relative", foo && [
         "text-white",
         "hover:text-grey-100",
       ])}
@@ -101,7 +101,7 @@ ruleTester.run("one-by-one-arguments", rule, {
     {
       code: `
 <button
-  className={classNames("bg-blue-300 block", [
+  className={classNames("bg-blue-300 block", foo && [
     "relative",
     "text-white hover:text-grey-100",
   ])}
@@ -118,7 +118,7 @@ ruleTester.run("one-by-one-arguments", rule, {
               desc: 'Convert to classNames("...", "...", ...) properly',
               output: `
 <button
-  className={classNames("bg-blue-300", "block", [
+  className={classNames("bg-blue-300", "block", foo && [
     "relative",
     "text-white", "hover:text-grey-100",
   ])}
