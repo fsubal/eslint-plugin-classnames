@@ -1,0 +1,140 @@
+// @ts-check
+"use strict";
+
+const RuleTester = require("eslint").RuleTester;
+const rule = require("../../../lib/rules/one-by-one-arguments");
+const { parserOptions } = require("../../utils");
+
+const ruleTester = new RuleTester({ parserOptions });
+
+ruleTester.run("one-by-one-arguments", rule, {
+  valid: [
+    {
+      code: `<button
+      className={classNames(
+        "bg-blue-300",
+        "block",
+        "relative",
+        "text-white",
+        "hover:text-grey-100"
+      )}
+    >
+      Hello
+    </button>;
+`,
+      options: [],
+    },
+    {
+      code: `<button
+      className={classNames(["bg-blue-300", "block"], "relative", [
+        "text-white",
+        "hover:text-grey-100",
+      ])}
+    >
+      Hello
+    </button>;
+`,
+      options: [],
+    },
+    {
+      code: `<button className={classNames("bg-blue-300", "block", style.someClass)}>
+      Hello
+    </button>;
+`,
+      options: [],
+    },
+  ],
+
+  invalid: [
+    {
+      code: `
+<button
+  className={classNames(
+    "bg-blue-300 block",
+    "relative",
+    "text-white hover:text-grey-100"
+  )}
+>
+  Hello
+</button>;`,
+      options: [],
+      errors: [
+        {
+          message:
+            "An argument of classNames() has mulitple classes. Should be written one by one.",
+          suggestions: [
+            {
+              desc: 'Convert to classNames("...", "...", ...) properly',
+              output: `
+<button
+  className={classNames(
+    "bg-blue-300", "block",
+    "relative",
+    "text-white", "hover:text-grey-100"
+  )}
+>
+  Hello
+</button>;`,
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      code: `
+<button
+  className={classNames("bg-blue-300 block", [
+    "relative",
+    "text-white hover:text-grey-100",
+  ])}
+>
+  Hello
+</button>;`,
+      options: [],
+      errors: [
+        {
+          message:
+            "An argument of classNames() has mulitple classes. Should be written one by one.",
+          suggestions: [
+            {
+              desc: 'Convert to classNames("...", "...", ...) properly',
+              output: `
+<button
+  className={classNames("bg-blue-300", "block", [
+    "relative",
+    "text-white", "hover:text-grey-100",
+  ])}
+>
+  Hello
+</button>;`,
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      code: `
+<button className={classNames("bg-blue-300 block", style.someClass)}>
+  Hello
+</button>;`,
+      options: [],
+      errors: [
+        {
+          message:
+            "An argument of classNames() has mulitple classes. Should be written one by one.",
+          suggestions: [
+            {
+              desc: 'Convert to classNames("...", "...", ...) properly',
+              output: `
+<button className={classNames("bg-blue-300", "block", style.someClass)}>
+  Hello
+</button>;`,
+            },
+          ],
+        },
+      ],
+    },
+  ],
+});
