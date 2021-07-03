@@ -160,7 +160,7 @@ ruleTester.run("one-by-one-arguments", rule, {
   className={clsx(
     "bg-blue-300 block",
     "relative",
-    foo ? "text-white hover:text-grey-100" : "text-black hover:text-grey-900"
+    foo ? "text-white hover:text-grey-100" : "text-black"
   )}
 >
   Hello
@@ -182,7 +182,7 @@ ruleTester.run("one-by-one-arguments", rule, {
   className={clsx(
     "bg-blue-300", "block",
     "relative",
-    foo ? ["text-white", "hover:text-grey-100"] : ["text-black", "hover:text-grey-900"]
+    foo ? ["text-white", "hover:text-grey-100"] : "text-black"
   )}
 >
   Hello
