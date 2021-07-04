@@ -78,7 +78,7 @@ ruleTester.run("one-by-one-arguments", rule, {
       errors: [
         {
           message:
-            "An argument of classNames() has mulitple classes. Should be written one by one.",
+            "An argument of classNames() has multiple classes. Should be written one by one.",
           suggestions: [
             {
               desc: 'Convert to classNames("...", "...", ...) properly',
@@ -112,7 +112,7 @@ ruleTester.run("one-by-one-arguments", rule, {
       errors: [
         {
           message:
-            "An argument of classNames() has mulitple classes. Should be written one by one.",
+            "An argument of classNames() has multiple classes. Should be written one by one.",
           suggestions: [
             {
               desc: 'Convert to classNames("...", "...", ...) properly',
@@ -140,7 +140,7 @@ ruleTester.run("one-by-one-arguments", rule, {
       errors: [
         {
           message:
-            "An argument of classNames() has mulitple classes. Should be written one by one.",
+            "An argument of classNames() has multiple classes. Should be written one by one.",
           suggestions: [
             {
               desc: 'Convert to classNames("...", "...", ...) properly',
@@ -173,7 +173,7 @@ ruleTester.run("one-by-one-arguments", rule, {
       errors: [
         {
           message:
-            "An argument of clsx() has mulitple classes. Should be written one by one.",
+            "An argument of clsx() has multiple classes. Should be written one by one.",
           suggestions: [
             {
               desc: 'Convert to clsx("...", "...", ...) properly',
