@@ -9,7 +9,6 @@ Examples of **incorrect** code for this rule:
 ```jsx
 <button className="bg-blue-300 block">Hello</button>;
 <button className={`bg-blue-300 block`}>Hello</button>;
-<button className={classNames("bg-blue-300 block")}>Hello</button>;
 <button className={classNames("bg-blue-300")}>Hello</button>;
 ```
 
