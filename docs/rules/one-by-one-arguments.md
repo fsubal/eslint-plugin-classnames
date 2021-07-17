@@ -1,4 +1,4 @@
-# Rule to suggest using className() or clsx() in JSX className (classnames/prefer-classnames-function)
+# Rule to avoid having multiple classes in className() or clsx() (classnames/one-by-one-arguments)
 
 Suggest not to include multiple classes in an argument of className() or clsx()
 
