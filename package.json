@@ -1,7 +1,10 @@
 {
   "name": "eslint-plugin-classnames",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Warn and formats long classNames usage in JSX",
+  "repository": {
+    "url": "https://github.com/fsubal/eslint-plugin-classnames"
+  },
   "keywords": [
     "eslint",
     "eslintplugin",
