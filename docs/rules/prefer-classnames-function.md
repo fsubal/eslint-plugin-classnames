@@ -33,16 +33,16 @@ Examples of **correct** code for this rule:
 ```js
 ...
 "classnames/prefer-classnames-function": [<enabled>, {
-  "maxSpaceSeparetedClasses": <number>,
+  "maxSpaceSeparatedClasses": <number>,
   "functionName": <string>
 }]
 ...
 ```
 
-You can set `maxSpaceSeparetedClasses` so that you can allow space-separeted classes to be written more than once. It defaults to `1`.
+You can set `maxSpaceSeparatedClasses` so that you can allow space-separated classes to be written more than once. It defaults to `1`.
 
 You can set `functionName` to `classNames` or `clsx`.
 
 ## When Not To Use It
 
-If you want to allow space-separeted classes, you can disable this rule.
+If you want to allow space-separated classes, you can disable this rule.

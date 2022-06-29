@@ -87,4 +87,4 @@ You can set `functionName` to `classNames` or `clsx`. Defaults to `classNames`
 
 ## When Not To Use It
 
-If you want to allow space-separeted class strings, you can disable this rule.
+If you want to allow space-separated class strings, you can disable this rule.
