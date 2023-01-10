@@ -55,6 +55,16 @@ ruleTester.run("prefer-classnames-function", rule, {
         },
       ],
     },
+    // Don't avoid function other than functionName
+    {
+      code: '<button className={otherFunction("bg-blue-300")}>Hello</button>;',
+      options: [
+        {
+          maxSpaceSeparatedClasses: 1,
+          functionName: "className",
+        },
+      ],
+    },
   ],
   invalid: [
     {
