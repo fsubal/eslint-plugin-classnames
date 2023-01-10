@@ -157,12 +157,13 @@ ruleTester.run("prefer-classnames-function", rule, {
       options: [
         {
           maxSpaceSeparatedClasses: 2,
+          functionName: 'clsx'
         },
       ],
       errors: [
         {
           message:
-            "Do not use classNames() when you have no greater than 2 classes.",
+            "Do not use clsx() when you have no greater than 2 classes.",
           suggestions: [
             {
               desc: 'Just use className="..."',
