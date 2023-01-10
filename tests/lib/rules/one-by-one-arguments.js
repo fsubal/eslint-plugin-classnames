@@ -96,6 +96,16 @@ ruleTester.run("one-by-one-arguments", rule, {
           ],
         },
       ],
+      output: `
+<button
+  className={classNames(
+    "bg-blue-300", "block",
+    "relative",
+    "text-white", "hover:text-grey-100"
+  )}
+>
+  Hello
+</button>;`,
     },
 
     {
@@ -129,6 +139,15 @@ ruleTester.run("one-by-one-arguments", rule, {
           ],
         },
       ],
+      output: `
+<button
+  className={classNames("bg-blue-300", "block", foo && [
+    "relative",
+    "text-white", "hover:text-grey-100",
+  ])}
+>
+  Hello
+</button>;`,
     },
 
     {
@@ -152,6 +171,10 @@ ruleTester.run("one-by-one-arguments", rule, {
           ],
         },
       ],
+      output: `
+<button className={classNames("bg-blue-300", "block", style.someClass)}>
+  Hello
+</button>;`,
     },
 
     {
@@ -191,6 +214,16 @@ ruleTester.run("one-by-one-arguments", rule, {
           ],
         },
       ],
+      output: `
+<button
+  className={clsx(
+    "bg-blue-300", "block",
+    "relative",
+    foo ? ["text-white", "hover:text-grey-100"] : "text-black"
+  )}
+>
+  Hello
+</button>;`
     },
   ],
 });

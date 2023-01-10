@@ -88,6 +88,8 @@ ruleTester.run("prefer-classnames-function", rule, {
           ],
         },
       ],
+      output:
+        '<button className={className("bg-blue-300", "block")}>Hello</button>;',
     },
 
     {
@@ -110,6 +112,8 @@ ruleTester.run("prefer-classnames-function", rule, {
           ],
         },
       ],
+      output:
+        '<button className={clsx("bg-blue-300", "block")}>Hello</button>;',
     },
 
     {
@@ -132,6 +136,8 @@ ruleTester.run("prefer-classnames-function", rule, {
           ],
         },
       ],
+      output:
+        '<button className={classNames("bg-blue-300", "block", "relative")}>Hello</button>;',
     },
 
     // avoid className
@@ -150,6 +156,7 @@ ruleTester.run("prefer-classnames-function", rule, {
           ],
         },
       ],
+      output: '<button className="bg-blue-300">Hello</button>;',
     },
 
     {
@@ -173,6 +180,7 @@ ruleTester.run("prefer-classnames-function", rule, {
           ],
         },
       ],
+      output: '<button className="bg-blue-300 text-white">Hello</button>;',
     },
 
     // using template literal
@@ -192,6 +200,7 @@ ruleTester.run("prefer-classnames-function", rule, {
           ],
         },
       ],
+      output: '<button className={classNames("bg-blue-300", "block")}>Hello</button>;',
     },
   ],
 });
