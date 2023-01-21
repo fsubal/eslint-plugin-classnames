@@ -28,7 +28,7 @@ jobs:
           node-version: 14
           registry-url: https://registry.npmjs.org/
       - run: yarn install --immutable
-      - run: yarn npm publish
+      - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
 
@@ -45,6 +45,6 @@ jobs:
           node-version: 14
           registry-url: https://npm.pkg.github.com/
       - run: yarn install --immutable
-      - run: yarn npm publish
+      - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
