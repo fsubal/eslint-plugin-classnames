@@ -22,7 +22,7 @@
     "@types/estree-jsx": "^1.0.0",
     "eslint": "^8.32.0",
     "mocha": "^10.2.0",
-    "typescript": "^4.3.5"
+    "typescript": "^5.0.2"
   },
   "engines": {
     "node": ">=0.10.0"
