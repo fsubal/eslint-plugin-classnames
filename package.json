@@ -20,7 +20,7 @@
     "@types/eslint": "^8.4.10",
     "@types/estree": "^1.0.0",
     "@types/estree-jsx": "^1.0.0",
-    "eslint": "^8.32.0",
+    "eslint": "^9.3.0",
     "mocha": "^10.2.0",
     "typescript": "^5.0.2"
   },
