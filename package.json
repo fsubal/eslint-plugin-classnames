@@ -13,7 +13,8 @@
   "author": "fsubal",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha tests --recursive"
+    "test": "mocha tests --recursive",
+    "typecheck": "tsc --noEmit -p jsconfig.json"
   },
   "dependencies": {},
   "devDependencies": {
