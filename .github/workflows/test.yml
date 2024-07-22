@@ -23,7 +23,7 @@ jobs:
           cache: yarn
 
       - run: yarn install --immutable --inline-builds
-      - run: yarn tsc --noEmit
+      - run: yarn typecheck
       - run: yarn test
 
   automerge:
