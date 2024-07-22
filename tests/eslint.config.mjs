@@ -1,5 +1,4 @@
-// 本当のeslint.configはesmなのだが、mochaで動くように一旦こうしてみる
-module.exports = [{
+export default [{
   languageOptions: {
     ecmaVersion: 2018,
     sourceType: "module",

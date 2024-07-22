@@ -1,10 +1,10 @@
 // @ts-check
-"use strict";
 
-const RuleTester = require("eslint").RuleTester;
-const rule = require("../../../lib/rules/prefer-classnames-function");
+import { RuleTester } from "eslint";
+import rule from "../../../lib/rules/prefer-classnames-function.js";
+import eslintConfig from "../../eslint.config.mjs";
 
-const ruleTester = new RuleTester(require('../../eslint.config')[0]);
+const ruleTester = new RuleTester(eslintConfig[0]);
 
 ruleTester.run("prefer-classnames-function", rule, {
   valid: [
