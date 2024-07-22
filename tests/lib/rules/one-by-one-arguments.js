@@ -3,9 +3,8 @@
 
 const RuleTester = require("eslint").RuleTester;
 const rule = require("../../../lib/rules/one-by-one-arguments");
-const { parserOptions } = require("../../utils");
 
-const ruleTester = new RuleTester({ parserOptions });
+const ruleTester = new RuleTester(require('../../eslint.config')[0]);
 
 ruleTester.run("one-by-one-arguments", rule, {
   valid: [
