@@ -18,7 +18,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@types/eslint": "^8.4.10",
+    "@types/eslint": "^9.6.0",
     "@types/estree": "^1.0.0",
     "@types/estree-jsx": "^1.0.0",
     "eslint": "^9.7.0",
