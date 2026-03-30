@@ -21,7 +21,7 @@
     "@types/eslint": "^9.6.1",
     "@types/estree": "^1.0.0",
     "@types/estree-jsx": "^1.0.0",
-    "eslint": "^9.7.0",
+    "eslint": "^10.1.0",
     "mocha": "^11.0.1",
     "typescript": "^6.0.2"
   },
